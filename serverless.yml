@@ -1,0 +1,14 @@
+service: dollar-change-divisa
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  divisa:
+    handler: handler.divisa
+    events:
+      - httpApi:
+          path: /
+          method: get
